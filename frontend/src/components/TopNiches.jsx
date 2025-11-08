@@ -4,57 +4,56 @@ const TopNiches = () => {
   const services = [
     {
       id: 1,
-      service: "Software Development",
+      service: "Electrician",
       description:
-        "Innovative software development services to build, maintain, and upgrade applications, ensuring they meet the highest quality standards.",
+        "Expert electricians for wiring, lighting, and electrical repair work — ensuring safety, efficiency, and reliable power solutions.",
     },
     {
       id: 2,
-      service: "Web Development",
+      service: "Plumber",
       description:
-        "Comprehensive web development solutions from front-end design to back-end integration, delivering responsive and user-friendly websites.",
+        "Skilled plumbers offering leak repair, pipeline fitting, and bathroom installation with quick and quality service.",
     },
     {
       id: 3,
-      service: "Data Science",
+      service: "Carpenter",
       description:
-        "Advanced data science services to analyze and interpret complex data, providing actionable insights and data-driven solutions.",
+        "Professional carpenters for furniture making, wood repair, and customized fittings for homes and offices.",
     },
     {
       id: 4,
-      service: "Cloud Computing",
+      service: "Welder",
       description:
-        "Reliable cloud computing services to manage, store, and process data efficiently, offering scalable and flexible cloud solutions.",
+        "Certified welders experienced in fabrication, structural welding, and metal repair projects for industrial and home needs.",
     },
     {
       id: 5,
-      service: "DevOps",
+      service: "Painter",
       description:
-        "DevOps services to streamline software development and operations, enhancing deployment efficiency and reducing time to market.",
+        "Trusted painters providing interior and exterior painting services with smooth finishes and durable color quality.",
     },
     {
       id: 6,
-      service: "Mobile App Development",
+      service: "Driver",
       description:
-        "Expert mobile app development for iOS and Android platforms, creating intuitive and engaging mobile experiences for your users.",
+        "Experienced and verified drivers for personal, commercial, and delivery services — punctual, safe, and reliable.",
     },
   ];
 
   return (
     <section className="services">
-      <h3>Top Niches</h3>
+      <h3>Top BlueCollar Niches</h3>
       <div className="grid">
-        {services.map((element) => {
-          return (
-            <div className="card" key={element.id}>
-              <h4>{element.service}</h4>
-              <p>{element.description}</p>
-            </div>
-          );
-        })}
+        {services.map((element) => (
+          <div className="card" key={element.id}>
+            <h4>{element.service}</h4>
+            <p>{element.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
 
 export default TopNiches;
+

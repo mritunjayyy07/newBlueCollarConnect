@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -14,6 +15,7 @@ const MyJobs = () => {
     (state) => state.jobs
   );
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -36,53 +38,54 @@ const MyJobs = () => {
         <Spinner />
       ) : myJobs && myJobs.length <= 0 ? (
         <h1 style={{ fontSize: "1.4rem", fontWeight: "600" }}>
-          You have not posted any job!
+          You haven’t posted any work request yet.
         </h1>
       ) : (
         <>
           <div className="account_components">
-            <h3>My Jobs</h3>
+            <h3>My Work Posts</h3>
             <div className="applications_container">
               {myJobs.map((element) => (
                 <div className="card" key={element._id}>
                   <p className="sub-sec">
-                    <span>Job Title: </span>
+                    <span>Work Title: </span>
                     {element.title}
                   </p>
                   <p className="sub-sec">
-                    <span>Job Niche:</span> {element.jobNiche}
+                    <span>Work Category:</span> {element.jobNiche}
                   </p>
                   <p className="sub-sec">
-                    <span>Salary: </span> {element.salary}
+                    <span>Daily Wage / Payment: </span> {element.salary}
                   </p>
                   <p className="sub-sec">
-                    <span>Location:</span> {element.location}
+                    <span>Work Location:</span> {element.location}
                   </p>
                   <p className="sub-sec">
-                    <span>Job Type:</span> {element.jobType}
+                    <span>Work Type:</span> {element.jobType}
                   </p>
                   <p className="sub-sec">
-                    <span>Company Name:</span> {element.companyName}
+                    <span>Customer / Contractor Name:</span>{" "}
+                    {element.companyName}
                   </p>
                   <p className="sub-sec">
-                    <span>Introduction:</span> {element.introduction}
+                    <span>Work Description:</span> {element.introduction}
                   </p>
                   <p className="sub-sec">
-                    <span>Qualifications:</span> {element.qualifications}
+                    <span>Required Skills:</span> {element.qualifications}
                   </p>
                   <p className="sub-sec">
                     <span>Responsibilities:</span> {element.responsibilities}
                   </p>
                   {element.offers && (
                     <p className="sub-sec">
-                      <span>What Are We Offering:</span> {element.offers}
+                      <span>What We Provide:</span> {element.offers}
                     </p>
                   )}
                   <button
                     className="btn"
                     onClick={() => handleDeleteJob(element._id)}
                   >
-                    Delete Job
+                    Remove Work Post
                   </button>
                 </div>
               ))}
@@ -95,3 +98,4 @@ const MyJobs = () => {
 };
 
 export default MyJobs;
+

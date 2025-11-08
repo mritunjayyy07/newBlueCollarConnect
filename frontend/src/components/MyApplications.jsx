@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ const MyApplications = () => {
 
   useEffect(() => {
     dispatch(fetchJobSeekerApplications());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (error) {
@@ -43,33 +44,33 @@ const MyApplications = () => {
         <Spinner />
       ) : applications && applications.length <= 0 ? (
         <h1 style={{ fontSize: "1.4rem", fontWeight: "600" }}>
-          You have not applied for any job.
+          You have not requested or applied for any work yet.
         </h1>
       ) : (
         <>
           <div className="account_components">
-            <h3>My Application For Jobs</h3>
+            <h3>My Work Applications</h3>
             <div className="applications_container">
               {applications.map((element) => {
                 return (
                   <div className="card" key={element._id}>
                     <p className="sub-sec">
-                      <span>Job Title: </span> {element.jobInfo.jobTitle}
+                      <span>Work Title: </span> {element.jobInfo.jobTitle}
                     </p>
                     <p className="sub-sec">
-                      <span>Name</span> {element.jobSeekerInfo.name}
+                      <span>Name: </span> {element.jobSeekerInfo.name}
                     </p>
                     <p className="sub-sec">
-                      <span>Email</span> {element.jobSeekerInfo.email}
+                      <span>Email: </span> {element.jobSeekerInfo.email}
                     </p>
                     <p className="sub-sec">
                       <span>Phone: </span> {element.jobSeekerInfo.phone}
                     </p>
                     <p className="sub-sec">
-                      <span>Address: </span> {element.jobSeekerInfo.address}
+                      <span>Location: </span> {element.jobSeekerInfo.address}
                     </p>
                     <p className="sub-sec">
-                      <span>Coverletter: </span>
+                      <span>Work Details: </span>
                       <textarea
                         value={element.jobSeekerInfo.coverLetter}
                         rows={5}
@@ -81,7 +82,7 @@ const MyApplications = () => {
                         className="outline_btn"
                         onClick={() => handleDeleteApplication(element._id)}
                       >
-                        Delete Application
+                        Cancel Request
                       </button>
                       <Link
                         to={
@@ -91,7 +92,7 @@ const MyApplications = () => {
                         className="btn"
                         target="_blank"
                       >
-                        View Resume
+                        View ID Proof / Resume
                       </Link>
                     </div>
                   </div>
@@ -106,3 +107,5 @@ const MyApplications = () => {
 };
 
 export default MyApplications;
+
+

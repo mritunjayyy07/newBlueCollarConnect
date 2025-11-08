@@ -1,21 +1,26 @@
+
 import React from "react";
 
 const Hero = () => {
   return (
     <section className="hero">
-      <h1>Find Your Dream Job Today</h1>
+      <h1 >
+        Find Skilled Workers Near You
+      </h1>
+
       <h4>
-        Connecting Talent with Opportunities Across the Nation for Every Skill
-        Level
+        Connecting Local Customers with Trusted Labours for Every Need
       </h4>
+
       <div className="box">
-        Explore a vast array of job listings in diverse industries. Whether
-        you're a seasoned professional or just starting out, find the perfect
-        role to advance your career. Our platform makes job searching easy and
-        efficient, bringing you closer to your next big opportunity.
+        From plumbers and electricians to painters and drivers — find reliable
+        workers in your area within minutes. BlueCollar Connect makes hiring
+        easy, quick, and transparent for both customers and labours. Your next
+        helping hand is just a click away!
       </div>
     </section>
   );
 };
 
 export default Hero;
+

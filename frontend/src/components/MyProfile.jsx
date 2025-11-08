@@ -1,11 +1,14 @@
+
 import React from "react";
 import { useSelector } from "react-redux";
 
 const MyProfile = () => {
   const { user } = useSelector((state) => state.user);
+
   return (
     <div className="account_components">
-      <h3>My Profile</h3>
+      <h3>My BlueCollar Profile</h3>
+
       <div>
         <label>Full Name</label>
         <input
@@ -15,8 +18,9 @@ const MyProfile = () => {
           onChange={(e) => e.target.value}
         />
       </div>
+
       <div>
-        <label>Email Address</label>
+        <label>Email ID</label>
         <input
           type="email"
           disabled
@@ -24,9 +28,10 @@ const MyProfile = () => {
           onChange={(e) => e.target.value}
         />
       </div>
-      {user && user.role === "Job Seeker" && (
+
+      {user && user.role === "Worker" && (
         <div>
-          <label>My Preferred Job Niches</label>
+          <label>Preferred Work Categories</label>
           <div
             style={{ display: "flex", flexDirection: "column", gap: "15px" }}
           >
@@ -51,8 +56,9 @@ const MyProfile = () => {
           </div>
         </div>
       )}
+
       <div>
-        <label>Phone Number</label>
+        <label>Contact Number</label>
         <input
           type="number"
           disabled
@@ -60,8 +66,9 @@ const MyProfile = () => {
           onChange={(e) => e.target.value}
         />
       </div>
+
       <div>
-        <label>Address</label>
+        <label>Current Location</label>
         <input
           type="text"
           disabled
@@ -69,8 +76,9 @@ const MyProfile = () => {
           onChange={(e) => e.target.value}
         />
       </div>
+
       <div>
-        <label>Role</label>
+        <label>User Type</label>
         <input
           type="text"
           disabled
@@ -78,6 +86,7 @@ const MyProfile = () => {
           onChange={(e) => e.target.value}
         />
       </div>
+
       <div>
         <label>Joined On</label>
         <input
@@ -92,3 +101,4 @@ const MyProfile = () => {
 };
 
 export default MyProfile;
+

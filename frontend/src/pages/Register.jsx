@@ -22,26 +22,28 @@ const Register = () => {
   const [resume, setResume] = useState("");
 
   const nichesArray = [
-    "Software Development",
-    "Web Development",
-    "Cybersecurity",
-    "Data Science",
-    "Artificial Intelligence",
-    "Cloud Computing",
-    "DevOps",
-    "Mobile App Development",
-    "Blockchain",
-    "Database Administration",
-    "Network Administration",
-    "UI/UX Design",
-    "Game Development",
-    "IoT (Internet of Things)",
-    "Big Data",
-    "Machine Learning",
-    "IT Project Management",
-    "IT Support and Helpdesk",
-    "Systems Administration",
-    "IT Consulting",
+        
+    "Electrician",
+    "Plumber",
+    "Carpenter",
+    "Welder",
+    "Painter",
+    "Mason",
+    "Driver",
+    "Mechanic",
+    "House Cleaner",
+    "Gardener",
+    "Tailor",
+    "AC Technician",
+    "Security Guard",
+    "Cook",
+    "Barber",
+    "Construction Worker",
+    "Helper",
+    "Delivery Boy",
+    "Fabricator",
+    "Pest Control Technician"
+    
   ];
 
   const resumeHandler = (e) => {
@@ -234,7 +236,7 @@ const Register = () => {
                     </div>
                   </div>
                 </div>
-                <div className="wrapper">
+                {/* <div className="wrapper">
                   <div className="inputTag">
                     <label>Coverletter</label>
                     <div>
@@ -256,8 +258,8 @@ const Register = () => {
                         style={{ border: "none" }}
                       />
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
               </>
             )}
             <button type="submit" disabled={loading}>
