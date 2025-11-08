@@ -3,16 +3,15 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="hero">
-      <h1>Find Your Dream Job Today</h1>
+      <h1> Find Reliable Blue-Collar Jobs Near You  </h1>
       <h4>
-        Connecting Talent with Opportunities Across the Nation for Every Skill
-        Level
+        Connecting Skilled Workers with Trusted Employers Across India
       </h4>
       <div className="box">
-        Explore a vast array of job listings in diverse industries. Whether
-        you're a seasoned professional or just starting out, find the perfect
-        role to advance your career. Our platform makes job searching easy and
-        efficient, bringing you closer to your next big opportunity.
+        Whether you're a technician, driver, electrician, delivery partner,
+        plumber, construction worker, or machine operator—discover verified
+        job opportunities that value your skill and hard work. No complex
+        hiring process. No unnecessary interviews. Just real jobs, fast.
       </div>
     </section>
   );
