@@ -6,8 +6,9 @@ import { v2 as cloudinary } from "cloudinary";
 
 export const postApplication = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
-  const { name, email, phone, address, coverLetter } = req.body;
-  if (!name || !email || !phone || !address || !coverLetter) {
+  const { name, email, phone, address } = req.body;
+    console.log(req.body)
+  if (!name || !email || !phone || !address) {
     return next(new ErrorHandler("All fields are required.", 400));
   }
   const jobSeekerInfo = {
@@ -16,7 +17,6 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
     email,
     phone,
     address,
-    coverLetter,
     role: "Job Seeker",
   };
   const jobDetails = await Job.findById(id);
@@ -32,36 +32,36 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler("You have already applied for this job.", 400)
     );
   }
-  if (req.files && req.files.resume) {
-    const { resume } = req.files;
-    try {
-      const cloudinaryResponse = await cloudinary.uploader.upload(
-        resume.tempFilePath,
-        {
-          folder: "Job_Seekers_Resume",
-        }
-      );
-      if (!cloudinaryResponse || cloudinaryResponse.error) {
-        return next(
-          new ErrorHandler("Failed to upload resume to cloudinary.", 500)
-        );
-      }
-      jobSeekerInfo.resume = {
-        public_id: cloudinaryResponse.public_id,
-        url: cloudinaryResponse.secure_url,
-      };
-    } catch (error) {
-      return next(new ErrorHandler("Failed to upload resume", 500));
-    }
-  } else {
-    if (req.user && !req.user.resume.url) {
-      return next(new ErrorHandler("Please upload your resume.", 400));
-    }
-    jobSeekerInfo.resume = {
-      public_id: req.user && req.user.resume.public_id,
-      url: req.user && req.user.resume.url,
-    };
-  }
+//   if (req.files && req.files.resume) {
+//     const { resume } = req.files;
+//     try {
+//       const cloudinaryResponse = await cloudinary.uploader.upload(
+//         resume.tempFilePath,
+//         {
+//           folder: "Job_Seekers_Resume",
+//         }
+//       );
+//       if (!cloudinaryResponse || cloudinaryResponse.error) {
+//         return next(
+//           new ErrorHandler("Failed to upload resume to cloudinary.", 500)
+//         );
+//       }
+//       jobSeekerInfo.resume = {
+//         public_id: cloudinaryResponse.public_id,
+//         url: cloudinaryResponse.secure_url,
+//       };
+//     } catch (error) {
+//       return next(new ErrorHandler("Failed to upload resume", 500));
+//     }
+//   } else {
+//     if (req.user && !req.user.resume.url) {
+//       return next(new ErrorHandler("Please upload your resume.", 400));
+//     }
+//     jobSeekerInfo.resume = {
+//       public_id: req.user && req.user.resume.public_id,
+//       url: req.user && req.user.resume.url,
+//     };
+//   }
   const employerInfo = {
     id: jobDetails.postedBy,
     role: "Employer",

@@ -25,8 +25,8 @@ const PostApplication = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [coverLetter, setCoverLetter] = useState("");
-  const [resume, setResume] = useState("");
+//   const [coverLetter, setCoverLetter] = useState("");
+//   const [resume, setResume] = useState("");
 
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
@@ -38,10 +38,10 @@ const PostApplication = () => {
     formData.append("email", email);
     formData.append("phone", phone);
     formData.append("address", address);
-    formData.append("coverLetter", coverLetter);
-    if (resume) {
-      formData.append("resume", resume);
-    }
+    // formData.append("coverLetter", coverLetter);
+    // if (resume) {
+    //   formData.append("resume", resume);
+    // }
     dispatch(postApplication(formData, jobId));
   };
 
@@ -51,8 +51,8 @@ const PostApplication = () => {
       setEmail(user.email || "");
       setPhone(user.phone || "");
       setAddress(user.address || "");
-      setCoverLetter(user.coverLetter || "");
-      setResume((user.resume && user.resume.url) || "");
+    //   setCoverLetter(user.coverLetter || "");
+    //   setResume((user.resume && user.resume.url) || "");
     }
     if (error) {
       toast.error(error);
@@ -78,10 +78,10 @@ const PostApplication = () => {
     offering = singleJob.offers.split(". ");
   }
 
-  const resumeHandler = (e) => {
-    const file = e.target.files[0];
-    setResume(file);
-  };
+//   const resumeHandler = (e) => {
+//     const file = e.target.files[0];
+//     setResume(file);
+//   };
 
   return (
     <>
@@ -124,7 +124,7 @@ const PostApplication = () => {
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-          {user && user.role === "Job Seeker" && (
+          {/* {user && user.role === "Job Seeker" && (
             <>
               <div>
                 <label>Coverletter</label>
@@ -139,7 +139,7 @@ const PostApplication = () => {
                 <input type="file" onChange={resumeHandler} />
               </div>
             </>
-          )}
+          )} */}
 
           {isAuthenticated && user.role === "Job Seeker" && (
             <div style={{ alignItems: "flex-end" }}>

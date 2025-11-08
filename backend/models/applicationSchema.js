@@ -23,14 +23,6 @@ const applicationSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    resume: {
-      public_id: String,
-      url: String,
-    },
-    coverLetter: {
-      type: String,
-      required: true,
-    },
     role: {
       type: String,
       enum: ["Job Seeker"],
