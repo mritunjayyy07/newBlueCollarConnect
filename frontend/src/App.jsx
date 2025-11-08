@@ -38,7 +38,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        {/*<Footer />*/}
         <ToastContainer position="top-right" theme="dark" />
       </Router>
     </>
