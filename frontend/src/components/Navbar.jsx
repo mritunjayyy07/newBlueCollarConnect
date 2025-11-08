@@ -8,20 +8,8 @@ const Navbar = () => {
   return (
     <>
       <nav className={show ? "navbar show_navbar" : "navbar"}>
-        <div className="links">
-          <ul>
-            <li>
-              <div className="logo">
-                <Link to={"/"} onClick={() => setShow(!show)}><img src={"/logo.png"} alt="Logo" />
-                </Link>
-              </div>
-            </li>
-            <li>
-              <Link to={"/"} onClick={() => setShow(!show)}>
-                <b>Blue-Collar Connect</b>
-              </Link>
-            </li>
-          </ul>
+        <div className="logo">
+            <b>Blue-Collar Connect</b>
         </div>
         <div className="links">
           <ul>
