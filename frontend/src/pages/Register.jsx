@@ -18,36 +18,35 @@ const Register = () => {
   const [firstNiche, setFirstNiche] = useState("");
   const [secondNiche, setSecondNiche] = useState("");
   const [thirdNiche, setThirdNiche] = useState("");
-  const [coverLetter, setCoverLetter] = useState("");
-  const [resume, setResume] = useState("");
+  //const [coverLetter, setCoverLetter] = useState("");
+  //const [resume, setResume] = useState("");
 
   const nichesArray = [
-    "Software Development",
-    "Web Development",
-    "Cybersecurity",
-    "Data Science",
-    "Artificial Intelligence",
-    "Cloud Computing",
-    "DevOps",
-    "Mobile App Development",
-    "Blockchain",
-    "Database Administration",
-    "Network Administration",
-    "UI/UX Design",
-    "Game Development",
-    "IoT (Internet of Things)",
-    "Big Data",
-    "Machine Learning",
-    "IT Project Management",
-    "IT Support and Helpdesk",
-    "Systems Administration",
-    "IT Consulting",
+    "Labour",
+"Technician",
+"Electrician",
+"Plumber",
+"Carpenter",
+"Welder",
+"Driver",
+"Delivery Boy",
+"Security Guard",
+"Painter",
+"Machine Operator",
+"Construction Worker",
+"Helper",
+"Warehouse Worker",
+"Forklift Operator",
+"Sweeper",
+"Cleaner",
+"Tailor",
+"Mechanic",
   ];
 
-  const resumeHandler = (e) => {
-    const file = e.target.files[0];
-    setResume(file);
-  };
+  // const resumeHandler = (e) => {
+  //   const file = e.target.files[0];
+  //   setResume(file);
+  // };
 
   const { loading, isAuthenticated, error, message } = useSelector(
     (state) => state.user
@@ -69,8 +68,8 @@ const Register = () => {
       formData.append("firstNiche", firstNiche);
       formData.append("secondNiche", secondNiche);
       formData.append("thirdNiche", thirdNiche);
-      formData.append("coverLetter", coverLetter);
-      formData.append("resume", resume);
+      // formData.append("coverLetter", coverLetter);
+      // formData.append("resume", resume);
     }
     dispatch(register(formData));
   };
@@ -234,7 +233,7 @@ const Register = () => {
                     </div>
                   </div>
                 </div>
-                <div className="wrapper">
+                {/* <div className="wrapper">
                   <div className="inputTag">
                     <label>Coverletter</label>
                     <div>
@@ -257,7 +256,7 @@ const Register = () => {
                       />
                     </div>
                   </div>
-                </div>
+                </div> */}
               </>
             )}
             <button type="submit" disabled={loading}>
