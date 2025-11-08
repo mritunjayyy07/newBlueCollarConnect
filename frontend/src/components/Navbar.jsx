@@ -9,7 +9,10 @@ const Navbar = () => {
     <>
       <nav className={show ? "navbar show_navbar" : "navbar"}>
         <div className="logo">
-            <img src="/logo.png" alt="logo" />
+            
+            <Link to={"/"} onClick={() => setShow(!show)}>
+                <img src="/logo.png" alt="logo" />
+              </Link>
         </div>
         <div className="links">
           <ul>
