@@ -66,14 +66,14 @@ const Applications = () => {
                       <span>Applicant's Address: </span>{" "}
                       {element.jobSeekerInfo.address}
                     </p>
-                    <p className="sub-sec">
+                    {/* <p className="sub-sec">
                       <span>Applicant's CoverLetter: </span>
                       <textarea
                         value={element.jobSeekerInfo.coverLetter}
                         rows={5}
                         disabled
                       ></textarea>
-                    </p>
+                    </p> */}
                     <div className="btn-wrapper">
                       <button
                         className="outline_btn"
@@ -81,7 +81,7 @@ const Applications = () => {
                       >
                         Delete Application
                       </button>
-                      <Link
+                      {/* <Link
                         to={
                           element.jobSeekerInfo &&
                           element.jobSeekerInfo.resume.url
@@ -90,7 +90,7 @@ const Applications = () => {
                         target="_blank"
                       >
                         View Resume
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 );
