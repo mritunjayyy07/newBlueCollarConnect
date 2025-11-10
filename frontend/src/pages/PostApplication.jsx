@@ -242,7 +242,7 @@ const PostApplication = () => {
           </section>
           <hr />
           <footer>
-            <h3>Job Niche</h3>
+            <h3>Job role</h3>
             <p>{singleJob.jobNiche}</p>
           </footer>
         </div>
