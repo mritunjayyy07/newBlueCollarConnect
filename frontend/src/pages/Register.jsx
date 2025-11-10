@@ -176,13 +176,13 @@ const Register = () => {
               <>
                 <div className="wrapper">
                   <div className="inputTag">
-                    <label>Your First Niche</label>
+                    <label>Your First role</label>
                     <div>
                       <select
                         value={firstNiche}
                         onChange={(e) => setFirstNiche(e.target.value)}
                       >
-                        <option value="">Your Niche</option>
+                        <option value="">Your role</option>
                         {nichesArray.map((niche, index) => {
                           return (
                             <option key={index} value={niche}>
@@ -195,13 +195,13 @@ const Register = () => {
                     </div>
                   </div>
                   <div className="inputTag">
-                    <label>Your Second Niche</label>
+                    <label>Your Second role</label>
                     <div>
                       <select
                         value={secondNiche}
                         onChange={(e) => setSecondNiche(e.target.value)}
                       >
-                        <option value="">Your Niche</option>
+                        <option value="">Your role</option>
                         {nichesArray.map((niche, index) => {
                           return (
                             <option key={index} value={niche}>
@@ -214,13 +214,13 @@ const Register = () => {
                     </div>
                   </div>
                   <div className="inputTag">
-                    <label>Your Third Niche</label>
+                    <label>Your Third role</label>
                     <div>
                       <select
                         value={thirdNiche}
                         onChange={(e) => setThirdNiche(e.target.value)}
                       >
-                        <option value="">Your Niche</option>
+                        <option value="">Your role</option>
                         {nichesArray.map((niche, index) => {
                           return (
                             <option key={index} value={niche}>

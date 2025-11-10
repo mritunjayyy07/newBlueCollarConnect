@@ -531,6 +531,7 @@ footer div ul a span {
 }
 .authPage .login-container {
   max-width: 620px;
+  margin: auto;
 }
 .authPage .container .header {
   display: flex;

@@ -121,7 +121,7 @@ const Jobs = () => {
                 ))}
               </div>
               <div className="cities">
-                <h2>Filter Job By Niche</h2>
+                <h2>Filter Job By role</h2>
                 {nichesArray.map((niche, index) => (
                   <div key={index}>
                     <input
@@ -151,7 +151,7 @@ const Jobs = () => {
                   value={niche}
                   onChange={(e) => setNiche(e.target.value)}
                 >
-                  <option value="">Filter By Niche</option>
+                  <option value="">Filter By role</option>
                   {nichesArray.map((niche, index) => (
                     <option value={niche} key={index}>
                       {niche}
