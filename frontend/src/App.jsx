@@ -14,6 +14,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
+import BackgroundWrapper from "./components/BackgroundWrapper";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <BackgroundWrapper>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -40,7 +42,9 @@ const App = () => {
         </Routes>
         <Footer />
         <ToastContainer position="top-right" theme="dark" />
+        </BackgroundWrapper>
       </Router>
+      
     </>
   );
 };

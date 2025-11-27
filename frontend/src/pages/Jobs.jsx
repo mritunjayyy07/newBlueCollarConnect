@@ -137,8 +137,8 @@ const Jobs = () => {
                 ))}
               </div>
             </div>
-            <div className="container">
-              <div className="mobile-filter">
+            <div className="container" >
+              <div className="mobile-filter" >
                 <select value={city} onChange={(e) => setCity(e.target.value)}>
                   <option value="">Filter By City</option>
                   {cities.map((city, index) => (

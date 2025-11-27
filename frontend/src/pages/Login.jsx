@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { FaRegUser } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
+import { Spotlight } from "../components/Spotlight";
 
 const Login = () => {
   const [role, setRole] = useState("");
@@ -40,12 +41,15 @@ const Login = () => {
 
   return (
     <>
+    
       <section className="authPage">
+        <Spotlight className="-top-32 left-20 opacity-70" fill="white" />
         <div className="container login-container">
           <div className="header">
             <h3>Login to your account</h3>
           </div>
           <form onSubmit={handleLogin}>
+            
             <div className="inputTag">
               <label>Login As</label>
               <div>

@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
 
 * {
   margin: 0;
@@ -14,6 +30,25 @@ input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.loop-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  animation: typing 10s steps(20) infinite,
+             blink 0.10s step-end infinite;
+}
+
+@keyframes typing {
+  0%   { width: 0; }
+  50%  { width: 100%; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
 .btn,
 .black_btn,
 .outline_btn {
@@ -89,6 +124,11 @@ input::-webkit-outer-spin-button {
   align-items: center;
   gap: 30px;
 }
+.navbar .logo h1{
+  font-size: 45px;
+  font-style: italic;
+  color: white;
+}
 .navbar .logo h4 {
   font-size: 26px;
   font-weight: 600;
@@ -101,18 +141,20 @@ input::-webkit-outer-spin-button {
 .navbar .links {
   display: flex;
   justify-content: space-between;
+  
 }
 .navbar .links ul {
   display: flex;
   align-items: center;
   gap: 50px;
+  
 }
 .navbar .links ul li {
   list-style-type: none;
 }
 .navbar .links ul li a {
   text-decoration: none;
-  color: #444;
+  color: white;
   transition: 0.3s;
 }
 .navbar .links ul li a:hover {
@@ -350,6 +392,8 @@ footer div ul a span {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 700;
+  color: white;
+  
 }
 .hero h4 {
   font-size: 1.5rem;
@@ -519,6 +563,7 @@ footer div ul a span {
   max-width: 1500px;
   margin: 0 auto;
   min-height: 100vh;
+  justify-content: center;
 }
 .authPage .container {
   flex: 1;
@@ -531,7 +576,7 @@ footer div ul a span {
 }
 .authPage .login-container {
   max-width: 620px;
-  margin: auto;
+  justify-content: center;
 }
 .authPage .container .header {
   display: flex;
@@ -676,6 +721,7 @@ footer div ul a span {
   flex-direction: column;
   gap: 7px;
   display: flex;
+  color: white;
 }
 .jobs .wrapper .filter-bar .cities h2 {
   font-size: 24px;
@@ -703,6 +749,7 @@ footer div ul a span {
   border-radius: 7px;
   padding: 12px 140px 12px 8px;
   border: 1px solid gray;
+  color: white;
 }
 .jobs .search-tab-wrapper svg {
   display: none;
@@ -866,6 +913,7 @@ footer div ul a span {
 .account {
   padding: 40px 100px;
   min-height: 800px;
+  color: white;
 }
 .account .component_header {
   display: flex;
@@ -875,7 +923,7 @@ footer div ul a span {
 }
 .account .component_header p {
   font-weight: 500;
-  color: #111;
+  color: whitesmoke;
 }
 .account .component_header p:last-child {
   position: relative;
@@ -906,7 +954,7 @@ footer div ul a span {
   gap: 10px;
 }
 .account .container .sidebar .sidebar_links button {
-  color: gray;
+  color: white;
   text-decoration: none;
   font-weight: 300;
   transition: 0.3s;
@@ -977,7 +1025,7 @@ footer div ul a span {
 .account_components div textarea {
   background: #8080805e;
   border: none;
-  color: #555;
+  color: whitesmoke;
   padding: 8px 3px;
 }
 .account_components div input:focus,
@@ -1284,6 +1332,7 @@ footer div ul a span {
   max-width: 1500px;
   min-width: 1500px;
   margin: 0 auto;
+  color: white;
 }
 .application_page form {
   display: flex;

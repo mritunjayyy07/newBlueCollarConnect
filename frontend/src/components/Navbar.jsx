@@ -7,15 +7,18 @@ const Navbar = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
   return (
     <>
+    
       <nav className={show ? "navbar show_navbar" : "navbar"}>
         <div className="logo">
             
             <Link to={"/"} onClick={() => setShow(!show)}>
                 <img src="/logo.png" alt="logo" />
               </Link>
+              <Link to={"/"} onClick={() => setShow(!show)}>
+              <h1 className="logo-text">Blue Collar Connect</h1></Link>
         </div>
         <div className="links">
-          <ul>
+          <ul>  
             <li>
               <Link to={"/"} onClick={() => setShow(!show)}>
                 HOME

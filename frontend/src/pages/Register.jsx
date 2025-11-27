@@ -222,7 +222,7 @@ const Register = () => {
                       >
                         <option value="">Your role</option>
                         {nichesArray.map((niche, index) => {
-                          return (
+                          return (  
                             <option key={index} value={niche}>
                               {niche}
                             </option>
